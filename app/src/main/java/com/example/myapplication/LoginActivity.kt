@@ -1,26 +1,19 @@
 package com.example.myapplication
 
 import android.content.Intent
-import android.nfc.Tag
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.BatchResultToken
-import com.google.android.gms.tasks.OnCanceledListener
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.android.gms.tasks.Tasks
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.ktx.Firebase
+
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth;
@@ -99,7 +92,25 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, Google_Login_code);
     }
 
+    // SignOut
     private fun signOut(){
+        // firebase signOut
+        auth.signOut();
 
+        // google signOut
+        googleSignInClient.signOut().addOnCompleteListener(
+            this
+        ) { Toast.makeText(applicationContext, "Complete", Toast.LENGTH_LONG).show() }
     }
+
+    private fun revokeAccess(){
+        // firebase signOut
+        auth.signOut();
+
+        // go
+        googleSignInClient.revokeAccess().addOnCanceledListener(
+            this
+        ) {Toast.makeText(applicationContext, "Complete", Toast.LENGTH_LONG).show() }
+    }
+
 }
