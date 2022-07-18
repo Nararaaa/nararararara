@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "767185528",
+    "project_id": "exmstagram",
+    "storage_bucket": "exmstagram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767185528:android:88d85c9479d08009b6538d",
+        "android_client_info": {
+          "package_name": "com.exmple.exm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767185528-i6cm5nise0ir97kfv1gne4q3qknonck5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exmple.exm",
+            "certificate_hash": "68844f33c4876bf9701118f222e191c99e0b75ed"
+          }
+        },
+        {
+          "client_id": "767185528-p5ma1n9o7o4844q6uuccvvq3jjlqelm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa9a-ug28yvcoSAa_szaKEcVO67f0KdJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767185528-p5ma1n9o7o4844q6uuccvvq3jjlqelm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
