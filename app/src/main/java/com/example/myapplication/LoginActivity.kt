@@ -13,9 +13,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.BatchResultToken
+import com.google.android.gms.tasks.OnCanceledListener
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -30,12 +34,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         signInButton = findViewById(R.id.google_signIn_button)
 
-        /*// 구글 로그인 구성
+        // 구글 로그인 구성
         val gos = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        googleSignInClient = GoogleSignIn.getClient(this,gos)*/
+        googleSignInClient = GoogleSignIn.getClient(this,gos)
 
         // firebase 초기화
         auth = FirebaseAuth.getInstance();
@@ -72,6 +76,30 @@ class LoginActivity : AppCompatActivity() {
 
     // firebase 인증
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?){
+        Log.d(Tag,"firebaseAuthWithGoogle: " + account?.id);
+        var credential = GoogleAuthProvider.getCredential(account?.idToken, null);
+        auth.signInWithCredential(credential)
+            ?.addOnCompleteListener { it ->
+                if (it.isSuccessful) {
+                    // 로그인 성공
+                    Log.d(Tag, "signInWithCredential:success");
+                    var user = auth.currentUser;
+                    }
+                else
+                {
+                    // 로그인 실패
+                    Log.w(Tag, "signInWithCredential:failure", it.exception);
+                }
+            }
+    }
+
+    // SignIn
+    private fun signIn(){
+        var signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, Google_Login_code);
+    }
+
+    private fun signOut(){
 
     }
 }

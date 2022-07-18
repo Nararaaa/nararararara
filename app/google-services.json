@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "767185528",
-    "project_id": "exmstagram",
-    "storage_bucket": "exmstagram.appspot.com"
+    "project_number": "932586546502",
+    "project_id": "examstagram-fecba",
+    "storage_bucket": "examstagram-fecba.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:767185528:android:88d85c9479d08009b6538d",
+        "mobilesdk_app_id": "1:932586546502:android:0034443aa4b5dd3415b147",
         "android_client_info": {
-          "package_name": "com.exmple.exm"
+          "package_name": "com.example.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "767185528-i6cm5nise0ir97kfv1gne4q3qknonck5.apps.googleusercontent.com",
+          "client_id": "932586546502-2d7nvams35b9vos8eo7kuou4h31gfljc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.exmple.exm",
+            "package_name": "com.example.myapplication",
             "certificate_hash": "68844f33c4876bf9701118f222e191c99e0b75ed"
           }
         },
         {
-          "client_id": "767185528-p5ma1n9o7o4844q6uuccvvq3jjlqelm8.apps.googleusercontent.com",
+          "client_id": "932586546502-qhv1r9c8t3kaehi2o1i7j7tiniu5gddc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAa9a-ug28yvcoSAa_szaKEcVO67f0KdJ8"
+          "current_key": "AIzaSyAV6NDswoDqbhNwcH51M5h9qq8qt9Ne4o0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "767185528-p5ma1n9o7o4844q6uuccvvq3jjlqelm8.apps.googleusercontent.com",
+              "client_id": "932586546502-qhv1r9c8t3kaehi2o1i7j7tiniu5gddc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
