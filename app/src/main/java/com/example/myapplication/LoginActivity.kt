@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth;
     private lateinit var googleSignInClient: GoogleSignInClient;
     private lateinit var signInButton: SignInButton;
-    private var Tag = "mainTag";
+    private var TAG = "mainTag";
     private var Google_Login_code = 123;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,13 +55,13 @@ class LoginActivity : AppCompatActivity() {
 
         if(requestCode == Google_Login_code){
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            var account: GoogleSignInAccount? = null;
+            var account: GoogleSignInAccount;
             try {
                 // 구글로그인 성공, firebase 인증
-                account = task.getResult(ApiException::class.java)
+              account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account);
             }catch (e :ApiException){
-                Log.w(Tag,"Google sign in failed", e);
+                Log.w(TAG,"Google sign in failed", e);
                 Toast.makeText(applicationContext, "Google sign in failed", Toast.LENGTH_LONG).show();
             }
         }
@@ -69,19 +69,19 @@ class LoginActivity : AppCompatActivity() {
 
     // firebase 인증
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?){
-        Log.d(Tag,"firebaseAuthWithGoogle: " + account?.id);
+        Log.d(TAG,"firebaseAuthWithGoogle: " + account?.id);
         var credential = GoogleAuthProvider.getCredential(account?.idToken, null);
         auth.signInWithCredential(credential)
             ?.addOnCompleteListener { it ->
                 if (it.isSuccessful) {
                     // 로그인 성공
-                    Log.d(Tag, "signInWithCredential:success");
+                    Log.d(TAG, "signInWithCredential:success");
                     var user = auth.currentUser;
                     }
                 else
                 {
                     // 로그인 실패
-                    Log.w(Tag, "signInWithCredential:failure", it.exception);
+                    Log.w(TAG, "signInWithCredential:failure", it.exception);
                 }
             }
     }

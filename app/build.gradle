@@ -34,15 +34,15 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation platform('com.google.firebase:firebase-bom:30.2.0')  // 구글 파이어베이스 연동
     implementation 'com.google.firebase:firebase-analytics-ktx'         // 구글 파이어베이스 연동
     implementation 'com.google.android.gms:play-services-auth:20.2.0'   // 구글 파이어베이스 연동
-    implementation 'com.google.firebase:firebase-core:21.0.0'           // 파이어베이스 코어
-    implementation 'com.google.firebase:firebase-auth:21.0.6'           // 파이어베이스 인증
+    implementation 'com.google.firebase:firebase-core:21.1.0'           // 파이어베이스 코어
+    implementation 'com.google.firebase:firebase-auth:21.0.7'           // 파이어베이스 인증
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
